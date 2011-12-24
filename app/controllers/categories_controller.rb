@@ -1,5 +1,5 @@
-class CategoriesController < ApplicationController
-  layout "backend"
+class CategoriesController < AdminManagementController
+
   # GET /categories
   # GET /categories.json
   def index

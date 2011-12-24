@@ -1,5 +1,5 @@
-class AboutsController < ApplicationController
-  layout "backend"
+class AboutsController < AdminManagementController
+
   # GET /abouts
   # GET /abouts.json
 

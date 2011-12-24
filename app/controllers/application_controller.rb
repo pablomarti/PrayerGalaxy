@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   	protect_from_forgery
 
   	def checkUser
+      if session[:cart].nil?
+        session[:cart] = {}
+      end
+
   		@currentUser = nil
   		if !session[:userId].nil?
   			@currentUser = User.find(session[:userId])
-
-  			if session[:cart].nil?
-  				session[:cart] = {}
-  			end
   		end
   	end
 

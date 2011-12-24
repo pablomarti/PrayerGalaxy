@@ -1,5 +1,5 @@
-class PartnersController < ApplicationController
-  layout "backend"
+class PartnersController < AdminManagementController
+
   # GET /partners
   # GET /partners.json
   def index

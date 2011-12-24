@@ -1,5 +1,5 @@
-class ContactsController < ApplicationController
-  layout "backend"
+class ContactsController < AdminManagementController
+
   # GET /contacts
   # GET /contacts.json
   def index

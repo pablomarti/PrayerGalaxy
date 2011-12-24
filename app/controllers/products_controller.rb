@@ -1,9 +1,9 @@
-class ProductsController < ApplicationController
-  layout "backend"
+class ProductsController < AdminManagementController
+
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.order("id DESC").paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|
       format.html # index.html.erb

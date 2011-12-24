@@ -1,9 +1,5 @@
 Prayergalaxy::Application.routes.draw do
 
-  resources :admins
-
-  resources :admin_levels
-
   get "video/index", :as => "video_page"
   get 'video/loadVideo/:id' => 'video#loadVideo', :as => 'load_video'
 
@@ -27,6 +23,16 @@ Prayergalaxy::Application.routes.draw do
   resources :sessions
   get "log_out" => "sessions#destroy", :as => "log_out"
 
+  #Backend - Admin
+  get "panel/index"
+  post "panel/login", :as => "admin_login"
+  get "panel/logout", :as => "admin_logout"
+  resources :admin_levels
+  resources :admins
+  resources :users
+  resources :contacts
+  resources :videos
+
   #Backend - Basic Pages
   resources :abouts
   resources :partners
@@ -34,10 +40,6 @@ Prayergalaxy::Application.routes.draw do
   resources :contact_pages
   resources :prayer_watches
 
-  #Backend - Admin
-  resources :users
-  resources :contacts
-  resources :videos
 
   #Backend - Store
   resources :categories

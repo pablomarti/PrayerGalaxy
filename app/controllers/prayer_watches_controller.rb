@@ -1,5 +1,5 @@
-class PrayerWatchesController < ApplicationController
-  layout "backend"
+class PrayerWatchesController < AdminManagementController
+
   # GET /prayer_watches
   # GET /prayer_watches.json
   def index

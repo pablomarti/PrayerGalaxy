@@ -1,5 +1,11 @@
 <% if userIsLoged %>
-	Hi <%= @currentUser.fullname %> | <%= link_to "Log out", log_out_path %>
+	<div class="userName">
+		<%= truncate(@currentUser.fullname, :length =>15) %>
+	</div>
+
+	<div class="normalLogout">
+		<%= link_to image_tag("logOut.png"), log_out_path, :class => "logoutButton" %>
+	</div>
 <% else %>
 	<%= link_to image_tag("signUp.png"), mnewUser_path %>
 	<%= link_to image_tag("logIn.png"), "javascript:void(0)", :id => "loginButton" %>

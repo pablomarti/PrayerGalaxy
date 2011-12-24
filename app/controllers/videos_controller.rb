@@ -1,5 +1,5 @@
-class VideosController < ApplicationController
-  layout "backend"
+class VideosController < AdminManagementController
+
   # GET /videos
   # GET /videos.json
   def index

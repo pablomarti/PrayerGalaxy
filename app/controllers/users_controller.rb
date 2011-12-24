@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  layout "backend"
+class UsersController < AdminManagementController
+
   # GET /users
   # GET /users.json
   def index

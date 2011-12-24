@@ -8,7 +8,9 @@
 	</div>
 
 	<div id="userStatus">
-		<%= render "userStatus" %>
+		<% if @showMenu %>
+			<%= link_to image_tag("logOut.png"), admin_logout_path, :class => "logoutButton" %>
+		<% end %>
 	</div>
 
 	<div id="liveButton">
@@ -18,14 +20,16 @@
 
 <div id="menu">
 	<div id="menuItemsBackend">
-		<%= link_to "Categories", categories_path, :class => "menuText" %>
-		<%= link_to "Products", products_path, :class => "menuText" %>
-		<%= link_to "Videos", videos_path, :class => "menuText" %>
-		<%= link_to "Contacts", contacts_path, :class => "menuText" %>
-		<%= link_to "Users", users_path, :class => "menuText" %>
-		<%= link_to "About", abouts_path, :class => "menuText" %>
-		<%= link_to "Partners", partners_path, :class => "menuText" %>
-		<%= link_to "Prayer Watches", prayer_watches_path, :class => "menuText" %>
-		<%= link_to "Contact Page", contact_pages_path, :class => "menuText" %>
+		<% if @showMenu %>
+			<%= link_to "Categories", categories_path, :class => "menuText" %>
+			<%= link_to "Products", products_path, :class => "menuText" %>
+			<%= link_to "Videos", videos_path, :class => "menuText" %>
+			<%= link_to "Contacts", contacts_path, :class => "menuText" %>
+			<%= link_to "Users", users_path, :class => "menuText" %>
+			<%= link_to "About", abouts_path, :class => "menuText" %>
+			<%= link_to "Partners", partners_path, :class => "menuText" %>
+			<%= link_to "Prayer Watches", prayer_watches_path, :class => "menuText" %>
+			<%= link_to "Contact Page", contact_pages_path, :class => "menuText" %>
+		<% end %>
 	</div>
 </div>
