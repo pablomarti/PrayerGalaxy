@@ -1,0 +1,1 @@
+$("#addToCartElement").html("<%= @message %>")

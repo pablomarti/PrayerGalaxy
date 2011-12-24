@@ -1,0 +1,24 @@
+<div class="popularItem">
+	<div class="popularItemPic left">
+		<%= image_tag indexSmallItem.image %>
+	</div>
+
+	<div class="popularItemContent right">
+		<span class="popularItemTitle"><%= indexSmallItem.name %></span>
+
+		<div class="popularItemDescription">
+			<%= truncate(indexSmallItem.description, :length => 40) %>
+		</div>
+
+		<div class="popularItemPrice">
+			<%= indexSmallItem.price %>
+		</div>
+		
+		<div class="buyNowButton">
+			<%= link_to image_tag("buyNowButton.png"), store_product_path(indexSmallItem.id), :style => "background:none;" %>
+		</div>
+	</div>
+
+	<div class="clear">
+	</div>
+</div>

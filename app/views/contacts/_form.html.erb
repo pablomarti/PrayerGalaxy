@@ -1,0 +1,54 @@
+<%= form_for @contact, :remote => true do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="left">
+      <div class="field">
+        * First Name:<br />
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        * Last Name:<br />
+        <%= f.text_field :lastname %>
+      </div>
+
+      <div class="field">
+        * Email: <br />
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="field">
+        * Phone:<br />
+        <%= f.text_field :phone %>
+      </div>
+
+      <div class="field">
+        * This message is about:<br />
+        <%= f.text_field :about %>
+      </div>
+  </div>
+
+  <div class="left leftSpace">
+      <div class="field">
+        * Comments:<br />
+        <%= f.text_area :comment %>
+      </div>
+
+      <div class="actions">
+        <%= link_to "", "#", :id => "submit" %>
+      </div>
+  </div>
+
+  <div class="clear">
+  </div>
+<% end %>

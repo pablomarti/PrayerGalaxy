@@ -1,0 +1,30 @@
+<script type="text/javascript" language="javascript">
+	$(document).ready(function(){
+		$("#category").val("<%= @category %>");
+		$("#search").val("<%= @search %>");
+	});
+</script>
+
+<div class="title">
+	<span>Store</span><br />
+	<%= image_tag "storeLine.png" %>
+</div>
+
+<%= render "search" %>
+
+<div id="resultProducts">
+	<% if @products.length > 0 %>
+		<%= render :partial => "item", :collection => @products %>
+
+		<div class="clear">
+		</div>
+	<% else %>
+		<div class="noResult">
+			The search <strong><%= @search %></strong> did not match any result
+		</div>
+	<% end %>
+</div>
+
+<div id="pagination">
+	<%= will_paginate @products %>
+</div>

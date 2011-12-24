@@ -1,0 +1,25 @@
+<div class="item">
+	<%= image_tag checkout_item[:product].image, :class => "imageSmall left" %>
+	<p>
+		<div class="productName">
+			<%= checkout_item[:product].name %>
+		</div>
+
+		<div class="contentCart">
+			<div class="bigPrice left bigPriceWidth">
+				Price: <%= checkout_item[:product].price %>
+			</div>
+
+			<div class="totalProducts left">
+				<%= text_field_tag :total, checkout_item[:quantity], :class => "totalElements", :data => {:itemid => checkout_item[:product].id, :urlproduct => url_for(:controller => "store", :action => "updateCheckout")} %>
+			</div>
+		
+			<div class="bigPrice left">
+				Total: <%= checkout_item[:total] %>
+			</div>
+
+			<div class="clear"> 
+			</div>
+		</div>
+	</p>
+</div>

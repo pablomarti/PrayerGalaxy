@@ -1,0 +1,11 @@
+<h1>Listing prayer_watches</h1>
+
+<table>
+<% @prayer_watches.each do |prayer_watch| %>
+  <tr>
+    <td><%= prayer_watch.title %></td>
+    <td><%= prayer_watch.description %></td>
+    <td><%= link_to 'Edit', edit_prayer_watch_path(prayer_watch) %></td>
+  </tr>
+<% end %>
+</table>

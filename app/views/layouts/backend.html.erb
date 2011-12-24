@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Prayer Galaxy</title>
+	  	<%= stylesheet_link_tag    "application" %>
+	  	<%= javascript_include_tag "application" %>
+	  	<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div id="block">
+			<div id="mainBlock">
+				<div id="header">
+					<%= render "headerBackend" %>
+				</div>
+
+				<div id="content">
+					<%= yield %>
+				</div>
+
+				<div id="footer">
+					<%= render "footer" %>
+				</div>
+			</div>
+		</div>
+
+		<div id="clearFooter">
+			<div id="clearFooterAux">
+				Copyright &copy; 2011 Prayersgalaxy - All rights reserved 
+				| Contact Us
+				| Advertising
+				| User Agreement
+				| Privacy Policy
+				| Help
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+$("#mainVideo").html("<%= escape_javascript(render "video") %>")

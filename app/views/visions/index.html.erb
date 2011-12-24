@@ -1,0 +1,31 @@
+<h1>Listing visions</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Image1</th>
+    <th>Image2</th>
+    <th>Image3</th>
+    <th>Video</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @visions.each do |vision| %>
+  <tr>
+    <td><%= vision.description %></td>
+    <td><%= vision.image1 %></td>
+    <td><%= vision.image2 %></td>
+    <td><%= vision.image3 %></td>
+    <td><%= vision.video %></td>
+    <td><%= link_to 'Show', vision %></td>
+    <td><%= link_to 'Edit', edit_vision_path(vision) %></td>
+    <td><%= link_to 'Destroy', vision, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vision', new_vision_path %>

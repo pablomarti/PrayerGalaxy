@@ -1,0 +1,14 @@
+<div class="title">
+	<span>The 8 Prayer Watches</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<%= render :partial => "prayerWatch", :collection => @prayerWatches %>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

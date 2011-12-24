@@ -1,0 +1,41 @@
+<div class="title">
+	<span><%= @product.name %></span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<%= image_tag @product.image, :class => "imageMedium left" %>
+
+		<p>
+			<%= @product.description %>
+		</p>
+
+		<div class="clear">
+		</div>
+
+		<div class="productPriceAndCart">
+			<div class="productPriceAndCartAux">
+				<div class="bigPrice left">
+					<%= @product.price %>
+				</div>
+
+				<div id="addToCartElement" class="addToCart right">
+					<% if userIsLoged %>
+						<%= text_field_tag :total, @total, :placeholder => "Total" %>
+						<%= link_to @linkText, "javascript:void(0)", :class => "addToCheckout", :data => {:itemid => @product.id, :cero => @enableCero, :urlproduct => url_for(:controller => "store", :action => "addToCheckout")} %>
+					<% else %>
+						You must be logged in order to buy this product
+					<% end %>
+				</div>
+
+				<div class="clear">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

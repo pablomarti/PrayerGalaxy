@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Admin level:</b>
+  <%= @admin.admin_level_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @admin.lastname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @admin.active %>
+</p>
+
+<p>
+  <b>Password hash:</b>
+  <%= @admin.password_hash %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%= @admin.password_salt %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<%= link_to 'Back', admins_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @prayer_watch.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @prayer_watch.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_prayer_watch_path(@prayer_watch) %> |
+<%= link_to 'Back', prayer_watches_path %>

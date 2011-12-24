@@ -1,0 +1,60 @@
+<div class="title">
+	<span>Store</span><br />
+	<%= image_tag "storeLine.png" %>
+</div>
+
+<%= render "search" %>
+
+<div id="storeMainProducts">
+	<div id="storeSlider" class="left">
+		<div class="arrowBox left">
+			<%= link_to image_tag("arrowLeft.png"), "javascript:void(0)", :class => "arrowLeft" %>
+		</div>
+
+		<div class="slider left" id="slideshow">
+			<div id="slidesContainer">
+				<%= render :partial => "indexSlideItem", :collection => @sliderProducts %>
+			</div>
+		</div>
+
+		<div class="arrowBox left">
+			<%= link_to image_tag("arrowRight.png"), "javascript:void(0)", :class => "arrowRight" %>
+		</div>
+
+		<div class="clear">
+		</div>
+	</div>
+
+	<div id="mainProduct" class="right">
+		<div id="mainProductPic">
+			<%= image_tag @lastProduct.image %>
+		</div>
+
+		<div id="mainProductContent">
+			<span class="mainProductTitle"><%= @lastProduct.name %></span>
+
+			<div class="mainProductContent">
+				<%= truncate(@lastProduct.description, :length => 40) %>
+			</div>
+
+			<div>
+				<%= link_to "Buy it now!", store_product_path(@lastProduct.id), :class => "linkBuyNow" %>
+			</div>
+
+			<div class="bigPrice">
+				<%= @lastProduct.price %>
+			</div>
+		</div>
+
+		<div>
+			<%= link_to "More Details", store_product_path(@lastProduct.id) %>
+		</div>
+	</div>
+
+	<div class="clear">
+	</div>
+</div>
+
+<div id="storePopularProducts">
+	<%= render :partial => "indexSmallItem", :collection => @mainProducts %>
+</div>

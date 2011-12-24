@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @vision.description %>
+</p>
+
+<p>
+  <b>Image1:</b>
+  <%= @vision.image1 %>
+</p>
+
+<p>
+  <b>Image2:</b>
+  <%= @vision.image2 %>
+</p>
+
+<p>
+  <b>Image3:</b>
+  <%= @vision.image3 %>
+</p>
+
+<p>
+  <b>Video:</b>
+  <%= @vision.video %>
+</p>
+
+
+<%= link_to 'Edit', edit_vision_path(@vision) %> |
+<%= link_to 'Back', visions_path %>

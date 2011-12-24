@@ -1,0 +1,24 @@
+<div class="title">
+	<span>Contact</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<p class="bold">
+			THANKS FOR VISITING PRAYER GALAXY.COM<br /><br />
+			Use the form below  to get in touch with us. Indicating the nature of your<br />
+			comment/query below will help us to route it properly.<br /><br />
+			You can also reach us by phone at <%= @data.phone %> or<br />
+			by mail at <%= mail_to @data.email, @data.email, :id => "link" %>
+		</p>
+
+		<div class="contactForm">
+			<%= render :partial => "contacts/form" %>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

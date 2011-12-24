@@ -1,0 +1,20 @@
+<div class="title">
+	<span>Checkout</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<div id="checkout">
+			<%= render :partial => "checkout_item", :collection => @data %>
+		</div>
+
+		<div id="finalPrice" class="blackPrice right">
+			Total: <%= @final %>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

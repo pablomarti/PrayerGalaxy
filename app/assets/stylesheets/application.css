@@ -1,0 +1,358 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+/********************************* Basics ***************************************/
+*{
+	font-family: "Helvetica", Arial, sans-serif;
+	-webkit-font-smoothing:antialiased;
+	margin:0;
+	padding:0;
+}
+
+body,html{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-color:#639BD9;
+}
+
+body{
+	background-color:#639BD9;
+}
+
+img{
+	border:none;
+	border-style:none;
+	text-decoration:none;
+	background:none;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	background:none;
+	color:inherit;
+	text-decoration:none;
+	font-size: inherit;
+	border:none;
+	border-style:none;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+.clear{
+	clear:both;
+}
+
+.noBackground{
+	background:none;
+}
+
+/********************************* Body ***************************************/
+
+#block{
+	min-width:1020px;
+	width:auto;
+	height:auto;
+	margin:0;
+	padding:0px 0px 5px 0px;
+	position:relative;
+
+	background-image:url('background.jpg');
+	background-repeat:no-repeat;
+	background-color:#639BD9;
+	background-attachment:fixed;
+	background-position:center top;
+}
+	
+	#mainBlock{
+		width:1020px;
+		height:auto;
+		margin:0px auto 0px auto;
+		padding:0px;
+	}
+
+		#header{
+			width:1020px;
+			height:199px;
+			margin:0px auto 0px auto;
+			padding:0px;
+			background-image:url('topBackground.png');
+			background-repeat:no-repeat;
+			background-position:center;
+			position:relative;
+		}
+			
+			#top{
+				width:1020px;
+				height:150px;
+				position:relative;	
+			}
+				
+				#logo{
+					top:20px;
+					left:50px;	
+					position:absolute;
+				}
+
+					#logo a{
+						background:none;
+					}
+
+				#slogan{
+					top:30px;
+					left:350px;	
+					position:absolute;
+				}
+
+				#userStatus{
+					top:20px;
+					left:800px;	
+					position:absolute;
+				}
+
+					#userStatus a{
+						background:none;
+					}
+				
+				#liveButton{
+					top:60px;
+					left:820px;	
+					position:absolute;					
+				}
+
+			#menu{
+				background-image:url('menu.png');
+				background-repeat:no-repeat;
+				width:998px;
+				height:165px;
+				margin:0px auto 0px auto;
+			}
+
+			#menuItems{
+				width:800px;
+				height:20px;
+				margin:0px auto 0px auto;
+				padding:13px 0px 0px 0px;
+				text-align:center;
+			}
+
+			#menuItems a{
+				font-size:16px;
+				color:#FDFDFD;
+				text-decoration:none;
+				background:none;
+				font-weight:bold;
+				margin:0px 75px 0px 0px;
+			}
+
+			#menuItemsBackend{
+				width:900px;
+				height:20px;
+				margin:0px auto 0px auto;
+				padding:13px 0px 0px 0px;
+				text-align:center;
+			}
+
+			#menuItemsBackend a{
+				font-size:14px;
+				color:#FDFDFD;
+				text-decoration:none;
+				background:none;
+				font-weight:bold;
+				margin:0px 26px 0px 0px;
+			}
+
+			.menuTextSelected{
+				background-color:#F1BD53;
+			}
+
+		#content{
+			width:800px;
+			min-height:500px;
+			height:auto;
+			margin:1px auto 0px auto;
+			position:relative;
+		}
+
+		#contentIndex{
+			width:800px;
+			min-height:410px;
+			height:auto;
+			margin:1px auto 0px auto;
+			position:relative;
+		}
+
+		#footer{
+			width:100%;
+			height:auto;
+			margin:10px 0px 0px 0px;
+			text-align:center;
+		}
+			#footer *{
+				margin-left:20px;
+			}
+
+			#footer a{
+				color:#A2C4E9;
+				font-size:14px;
+				text-decoration:none;
+				background:none;
+			}
+
+		#clearFooter{
+			color:#434343;
+			font-size:10px;
+			background:#FFFFFF;
+			width:100%;
+			height:40px;
+			text-align:center;
+			margin:0px;
+		}
+			
+			#clearFooterAux{
+				width:100%;
+				height:auto;
+				margin:10px 0px 0px 0px;
+			}
+
+/********************************* Pages ***************************************/
+
+.initialContent{
+	width:800px;
+	height:auto;
+	margin:0px auto 0px auto;
+}
+
+.title{
+	font-size:22px;
+	color:#FDD967;
+	line-height:7px;
+}
+
+.content{
+	margin:10px 0px 0px 0px;
+	color:#FFFFFF;
+	font-size:15px;	
+	width:610px;
+	height:auto;
+	text-align:justify; 
+	text-justify:newspaper;
+	letter-spacing:0.9px;
+}
+
+.imageMedium{
+	margin:0px 15px 0px 0px;
+}
+
+.normalText{
+	color:#353535;
+	font-size:15px;
+}
+
+.bar{
+	width:174px;
+	height:auto;
+}
+
+	.bar img{
+		margin:0px 0px 7px 0px;
+	}
+
+#webBar a{
+	background:none;
+	border:none;
+	text-decoration:none;
+}
+
+/********************************* Modal Box ************************************/
+
+/*Reference: http://www.ericmmartin.com/projects/simplemodal/ */
+
+#simplemodal-overlay{
+	background-color:#000;
+}
+
+#simplemodal-container a.modalCloseImg {
+	width:18px;
+	height:16px;
+	display:block;
+	z-index:3200;
+	position:absolute;
+	top:7px;
+	right:8px;
+	cursor:pointer;
+	background:url(x.png) no-repeat; 
+}
+
+#loginBox{
+	width:258px;
+	height:150px;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+
+	#loginBoxContent{
+		width:220px;
+		height:auto;
+		margin:10px auto 0px auto;
+	}
+
+		#loginBoxContent input[type=text]{
+				display:block;
+				width:200px;
+				height:22px;
+				outline:none;
+				background-color:#FFFFFF;
+				-moz-border-radius: 16px;
+				border-radius: 16px;
+				-webkit-border-radius: 16px;
+				color:#76A1C1;
+				font-weight:bold;	
+		}
+
+		#loginBoxContent input[type=password]{
+				display:block;
+				width:200px;
+				height:22px;
+				outline:none;
+				background-color:#FFFFFF;
+				-moz-border-radius: 16px;
+				border-radius: 16px;
+				-webkit-border-radius: 16px;
+				color:#76A1C1;
+				font-weight:bold;	
+		}
+
+		#loginBoxContent div.marginTop{
+			margin:5px 0px 0px 0px;
+		}
+
+	#submitLogin{
+		display:block;
+		width:71px;
+		height:26px;
+		background:none;
+		background-image:url('logIn.png');
+	}
+
+/******************************** Prayer Watch **********************************/
+.prayerWatch{
+	background-color: #62A9E1;
+	background: -moz-linear-gradient(top, #7FBCE9, #63A8E1);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#7FBCE9), to(#63A8E1));
+}

@@ -1,0 +1,28 @@
+<div id="top">
+	<div id="logo">
+		<%= link_to image_tag("logo.png"), mindex_path %>
+	</div>
+
+	<div id="slogan">
+		<%= image_tag "slogan.png" %>
+	</div>
+
+	<div id="userStatus">
+		<%= render "userStatus" %>
+	</div>
+
+	<div id="liveButton">
+		<%= image_tag "Live24_7.png" %>
+	</div>
+</div>
+
+<div id="menu">
+	<div id="menuItems">
+		<%= link_to "Vision", mvision_path, :class => "menuText" %>
+		<%= link_to "About", mabout_path, :class => "menuText" %>
+		<%= link_to "Contact", mcontact_path, :class => "menuText" %>
+		<%= link_to "Partners", mpartners_path, :class => "menuText" %>
+		<%= link_to "Store", storepage_path, :class => "menuText" %>
+		<%= link_to "Donate", mdonate_path, :class => "menuText" %>
+	</div>
+</div>

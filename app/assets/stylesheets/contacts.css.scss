@@ -1,0 +1,58 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contactForm{
+	widht:auto;
+	height:auto;
+	margin:10px 0px 0px 0px;
+}
+
+p{
+	font-size:18px;
+}
+
+.leftSpace{
+	margin:0px 0px 0px 50px;
+}
+
+#link{
+	text-decoration:none;
+	background:none;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.field{
+	color:#E8EB9C;
+	font-weight:bold;
+}
+
+textarea{
+	width:250px;
+	height:170px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	outline:none;
+	color:#76A1C1;
+	font-weight:bold;	
+}
+
+input[type=text]{
+	height:22px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	outline:none;
+	color:#76A1C1;
+	font-weight:bold;		
+}
+
+#submit, #submitUser{
+	display:block;
+	width:80px;
+	height:26px;
+	background:none;
+	background-image:url('contactSubmit.png');
+}

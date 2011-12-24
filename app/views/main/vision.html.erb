@@ -1,0 +1,26 @@
+<div class="title">
+	<span>Vision</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<p>
+			<%= @data.description %>
+		</p>
+
+		<div id="pics">
+			<%= image_tag @data.image1 %>
+			<%= image_tag @data.image2 %>
+			<%= image_tag @data.image3 %>
+		</div>
+
+		<div class="video">
+			<%= @data.video %>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

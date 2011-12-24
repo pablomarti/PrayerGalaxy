@@ -1,0 +1,88 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue1: #7FBCE9;
+$blue2: #62A9E1;
+$blue3: #63A8E1;
+
+.prayerWatch{
+	width:580px;
+	height:auto;
+	margin:5px 0px 25px 0px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding:10px;
+
+	.title{
+		font-size:15px;
+		font-weight:bold;
+	}
+
+	.prayerWatchDescription{
+		color:#444444;
+		font-size:13px;
+	}
+}
+
+#homeContent{
+	width:920px;
+	height:400px;
+	position:absolute;
+	top:20px;
+	left:-60px;
+
+	#homeContentHelper{
+		width:920px;
+		height:400px;
+		position:relative;
+
+		#livePrayerSession{
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+
+		#homeVideo{
+			position:absolute;
+			top:100px;
+			left:0px;
+			width:385px;
+			height:291px;
+			background-color:#8EC0F1;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+		}
+
+		#homeAds{
+			position:absolute;
+			top:0px;
+			left:395px;
+
+			a{
+				background:none;
+				margin:0px 5px 0px 0px;
+			}
+		}
+
+		#liveCam8World{
+			position:absolute;
+			left:395px;
+			top:100px;
+		}
+
+		#adWords{
+			position:absolute;
+			top:100px;
+			left:665px;
+		}
+
+		#adSense{
+			position:absolute;
+			top:255px;
+			left:665px;
+		}
+	}
+}

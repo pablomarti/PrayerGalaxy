@@ -1,0 +1,23 @@
+<div id="loginBox">
+	<div>
+		<%= image_tag "loginBar.jpg" %>
+	</div>
+
+	<div id="loginBoxContent">
+		<%= form_tag sessions_path, :remote => true, :id => "loginForm" do %>
+			<%= hidden_field_tag :location, getActualLocation %>
+
+			<div class="right">
+				<%= text_field_tag :email, params[:email], :placeholder => "Username" %>
+			</div>
+
+			<div class="right marginTop">
+				<%= password_field_tag :password, params[:password], :placeholder => "Password" %>
+			</div>
+
+			<div class="actions right marginTop">
+				<%= link_to "", "#", :id => "submitLogin", :onclick => "submitLogin()" %>
+			</div>
+		<% end %>
+	</div>
+</div>

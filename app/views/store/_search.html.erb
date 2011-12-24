@@ -1,0 +1,18 @@
+<%= form_tag store_search_path, :id => "searchForm", :method => "GET" do %>
+<div id="storeSearch">
+	<div class="left">
+		<%= select_tag :category, options_from_collection_for_select(@categories, "id", "category") %>
+	</div>
+
+	<div class="left">
+		<%= text_field_tag :search, params[:search], :placeholder => "Search" %>
+
+		<div id="searchGoButton">
+			<%= link_to "", "javascript:void(0)", :id => "submitSearch" %>
+		</div>
+	</div>
+
+	<div class="clear">
+	</div>
+</div>
+<% end %>

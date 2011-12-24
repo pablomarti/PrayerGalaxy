@@ -1,0 +1,36 @@
+<script type="text/javascript" charset="utf-8">
+    VideoJS.setupAllWhenReady();
+</script>
+
+<div class="title">
+	<span>Worship Videos</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<div id="mainVideo">
+			<%= render "video" %>
+		</div>
+
+		<div id="videoContentSlider">
+			<div id="leftVideoArrow">
+				<%= link_to image_tag("videoSection/videoLeft.png"), "javascript:void(0)", :id => "videoLeftArrow" %>
+			</div>
+
+			<div id="mainSlider">
+				<div id="mainSliderAuxiliar">
+					<%= render :partial => "videoPreview", :collection => @videos %>
+				</div>
+			</div>
+
+			<div id="rightVideoArrow">
+				<%= link_to image_tag("videoSection/videoRight.png"), "javascript:void(0)", :id => "videoRightArrow" %>
+			</div>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

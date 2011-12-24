@@ -1,0 +1,21 @@
+<div class="productItem left">
+	<div class="productItemPic">
+		<%= image_tag item.image %>
+	</div>
+
+	<div class="productItemContent">
+		<span class="productItemContentTitle"><%= item.name %></span>
+
+		<div class="productItemContentDescription">
+			<%= truncate(item.description, :length => 40) %>
+		</div>
+
+		<div class="bigPrice">
+			<%= item.price %>
+		</div>
+	</div>
+		
+	<div class="buyNowButton">
+		<%= link_to image_tag("buyNowButton.png"), store_product_path(item.id), :style => "background:none;" %>
+	</div>
+</div>
