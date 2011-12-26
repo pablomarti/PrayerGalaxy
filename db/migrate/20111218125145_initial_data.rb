@@ -4,7 +4,7 @@ class InitialData < ActiveRecord::Migration
   	About.create!
   	Partner.create!
   	Vision.create!
-  	ContactPage.create!(:email => "info@prayergalaxy.com", :phone => "000.000.0000")
+  	ContactPage.create!(:email => "info@prayergalaxy.com")
   end
 
 end
