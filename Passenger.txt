@@ -10,3 +10,12 @@
      Options -MultiViews            # <-- MultiViews must be turned off
   </Directory>
 </VirtualHost>
+
+<VirtualHost *:80>
+  ServerName 173.201.189.144
+  DocumentRoot "/home/vrmedia/PrayerGalaxy/public"
+  <Directory "/home/vrmedia/PrayerGalaxy/public">
+     AllowOverride all
+     Options -MultiViews
+  </Directory>
+</VirtualHost>

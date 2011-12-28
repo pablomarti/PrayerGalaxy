@@ -41,14 +41,15 @@ class ProductsController < AdminManagementController
   # POST /products
   # POST /products.json
   def create
-    imageName = params[:product][:image].original_filename.gsub(/\s/,'_') 
-
-    tmp = params[:product][:image].tempfile
-    file = File.join("app/assets/images/product_pics", imageName)
-    FileUtils.cp tmp.path, file
-    FileUtils.rm tmp
-
-    params[:product][:image] = "product_pics/#{imageName}"
+    if !params[:product][:image].nil?
+      imageName = params[:product][:image].original_filename.gsub(/\s/,'_') 
+      tmp = params[:product][:image].tempfile
+      file = File.join("app/assets/images/product_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:product][:image] = "product_pics/#{imageName}"
+    end
+    
     @product = Product.new(params[:product])
 
     respond_to do |format|
@@ -66,14 +67,15 @@ class ProductsController < AdminManagementController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-    imageName = params[:product][:image].original_filename.gsub(/\s/,'_') 
 
-    tmp = params[:product][:image].tempfile
-    file = File.join("app/assets/images/product_pics", imageName)
-    FileUtils.cp tmp.path, file
-    FileUtils.rm tmp
-
-    params[:product][:image] = "product_pics/#{imageName}"
+    if !params[:product][:image].nil?
+      imageName = params[:product][:image].original_filename.gsub(/\s/,'_') 
+      tmp = params[:product][:image].tempfile
+      file = File.join("app/assets/images/product_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:product][:image] = "product_pics/#{imageName}"
+    end
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

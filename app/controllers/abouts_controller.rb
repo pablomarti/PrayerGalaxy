@@ -59,14 +59,15 @@ class AboutsController < AdminManagementController
   # PUT /abouts/1.json
   def update
     @about = About.find(params[:id])
-    imageName = params[:about][:image].original_filename.gsub(/\s/,'_') 
 
-    tmp = params[:about][:image].tempfile
-    file = File.join("app/assets/images/about_pics", imageName)
-    FileUtils.cp tmp.path, file
-    FileUtils.rm tmp
-
-    params[:about][:image] = "about_pics/#{imageName}"
+    if !params[:about][:image].nil?
+      imageName = params[:about][:image].original_filename.gsub(/\s/,'_') 
+      tmp = params[:about][:image].tempfile
+      file = File.join("app/assets/images/about_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:about][:image] = "about_pics/#{imageName}"
+    end
 
     respond_to do |format|
       if @about.update_attributes(params[:about])

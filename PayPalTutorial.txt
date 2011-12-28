@@ -1,0 +1,118 @@
+Paypal is having many development tools to integrate their gateway in a web application. Among them, now i am going to explain Paypal's exrpess checkout API. 
+
+
+To implement this, i am having "order" as a model in my example. After that, we should have test seller and buyer accounts in paypal's developer sandbox site, in order to check the balance after a successful transaction. 
+
+
+Paypal's Express Checkout API: 
+
+1) First, add "express_token, express_payer_id" fields to your orders table. 
+
+
+2) Now, add the following code to your development.rb file in "config/environments" path. 
+
+config.after_initialize do 
+ActiveMerchant::Billing::Base.mode = :test 
+
+EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new( 
+:login => "seller_1229899173_biz_api1.railscasts.com", 
+:password => "FXWU58S7KXFC6HBE", 
+:signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu" 
+) 
+end 
+
+Now, edit login, password and signature values with your respective values, obtained from Paypal's developer sandbox account. 
+
+This settings will be used to obtain seller details at the time of transaction. 
+
+3) Now, add the follwoing code to your respective controller in order to have the purchase settings, redirection url for redirecting to the paypal's site to confirm your purchase details and to create an order on successful completion of transaction. 
+
+
+def express 
+response = EXPRESS_GATEWAY.setup_purchase(amount, 
+:ip => request.remote_ip, 
+:return_url => new_order_url, 
+:cancel_return_url => products_url 
+) 
+redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token) 
+end 
+
+def new 
+@order = Order.new(:express_token => params[:token]) 
+end 
+
+def create 
+
+@order = Order.new(params[:order]) 
+# @order.ip_address = request.remote_ip 
+if @order.save 
+if @order.purchase 
+render :text => "success" 
+else 
+render :text => "failure" 
+end 
+else 
+render :text => 'purchase' 
+end 
+
+end 
+
+
+Now, edit the return_url and cancel_return_url values with your respective paths for having a return url from paypal's site on successful completion of transaction or on cancel of transaction. 
+
+
+4) Now, add the following methods to your order.rb file in models 
+
+def purchase 
+response = process_purchase 
+end 
+
+def process_purchase 
+EXPRESS_GATEWAY.purchase(amount, express_purchase_options) 
+end 
+
+def express_purchase_options 
+{ 
+:ip => ip_address, 
+:token => express_token, 
+:payer_id => express_payer_id 
+} 
+end 
+
+Now, edit the "amount" field with your respective field using which you are intended to send the total amount of purchases. And edit the "ip" field value with your respective system ip address. 
+
+
+
+5) Now, add path in routes.rb file for the "express" method in your respective controller. 
+
+
+6) Now, prepare a form to have the details of buyer. 
+
+<% form_for @order do |f| %> 
+<%= f.error_messages %> 
+<% if @order.express_token.blank? %> 
+<Your code> 
+<% else %> 
+<%= f.hidden_field :express_token %> 
+<p>Name: <%=h @order.first_name %> <%=h @order.last_name %></p> 
+<p>Confirmation details by clicking below button.</p> 
+<% end %> 
+<p><%= f.submit "Complete Order" %></p> 
+<% end %> 
+
+
+Now, edit your respective code to have the buyer details in a form in place of "<Your code>". 
+
+As, in the above example "setup_purchase" method, we have given return_url to "new_order_url". So, before redirecting to paypal's site, it will have the details of buyer in the above form and after successful approval of buyer at paypal's site, it will redirect back to our application form with express_token and express_payer_id as parameters. So, using them, it will enter into else part and display details of user and will ask to submit details for completing transaction. 
+
+
+7) Now, add the following link in your form, in which you are having details of the purchase. 
+
+<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_new_order_path %> 
+
+Now, edit "express_new_order_path" with your respective path for "express" method in your respective controller (like orders_controller). 
+
+
+
+
+That's all. Now, you can use the paypal's express checkout API from your application for making your transactions. And after successful completion of transaction, you can check the updated details of buyer and seller. 

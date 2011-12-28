@@ -41,23 +41,31 @@ class VideosController < AdminManagementController
   # POST /videos
   # POST /videos.json
   def create
-    videoName = params[:video][:video].original_filename.gsub(/\s/,'_') 
-    @video = Video.new({:title => params[:video][:title], :video => "/worshipvideos/#{videoName}"})
+    if !params[:video][:video].nil?
+      videoName = params[:video][:video].original_filename.gsub(/\s/,'_') 
+      @video = Video.new({:title => params[:video][:title], :video => "/worshipvideos/#{videoName}"})
+    else
+      @video = Video.new({:title => params[:video][:title]})
+    end
 
-    tmp = params[:video][:video].tempfile
-    file = File.join("public/worshipvideos", videoName)
-    FileUtils.cp tmp.path, file
-    FileUtils.rm tmp
+    if !params[:video][:video].nil?
+      tmp = params[:video][:video].tempfile
+      file = File.join("public/worshipvideos", videoName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+    end
 
     respond_to do |format|
       if @video.save
-        fork do
-          exec("./createVideoPics.sh '#{videoName}' &")
-        end
+        if !params[:video][:video].nil?
+          fork do
+            exec("./createVideoPics.sh '#{videoName}' &")
+          end
 
-        @video.update_attribute("pic1", "worship_pics/#{videoName}_1.jpg")
-        @video.update_attribute("pic2", "worship_pics/#{videoName}_2.jpg")
-        @video.update_attribute("pic3", "worship_pics/#{videoName}_3.jpg")
+          @video.update_attribute("pic1", "worship_pics/#{videoName}_1.jpg")
+          @video.update_attribute("pic2", "worship_pics/#{videoName}_2.jpg")
+          @video.update_attribute("pic3", "worship_pics/#{videoName}_3.jpg")
+        end
 
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
         format.json { render json: @video, status: :created, location: @video }

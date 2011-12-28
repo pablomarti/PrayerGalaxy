@@ -1,4 +1,5 @@
-class VisionsController < ApplicationController
+class VisionsController < AdminManagementController
+  
   # GET /visions
   # GET /visions.json
   def index
@@ -57,6 +58,41 @@ class VisionsController < ApplicationController
   # PUT /visions/1.json
   def update
     @vision = Vision.find(params[:id])
+
+    if !params[:vision][:image1].nil?
+      imageName = params[:vision][:image1].original_filename.gsub(/\s/,'_') 
+      tmp = params[:vision][:image1].tempfile
+      file = File.join("app/assets/images/vision_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:vision][:image1] = "vision_pics/#{imageName}"
+    end
+
+    if !params[:vision][:image2].nil?
+      imageName = params[:vision][:image2].original_filename.gsub(/\s/,'_') 
+      tmp = params[:vision][:image2].tempfile
+      file = File.join("app/assets/images/vision_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:vision][:image2] = "vision_pics/#{imageName}"
+    end
+
+    if !params[:vision][:image3].nil?
+      imageName = params[:vision][:image3].original_filename.gsub(/\s/,'_') 
+      tmp = params[:vision][:image3].tempfile
+      file = File.join("app/assets/images/vision_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:vision][:image3] = "vision_pics/#{imageName}"
+    end
+
+    if !params[:vision][:video].nil?
+      videoName = params[:vision][:video].original_filename.gsub(/\s/,'_') 
+      tmp = params[:vision][:video].tempfile
+      file = File.join("public/visionvideos", videoName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+    end
 
     respond_to do |format|
       if @vision.update_attributes(params[:vision])

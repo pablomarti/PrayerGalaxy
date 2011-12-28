@@ -58,14 +58,15 @@ class PartnersController < AdminManagementController
   # PUT /partners/1.json
   def update
     @partner = Partner.find(params[:id])
-    imageName = params[:partner][:image].original_filename.gsub(/\s/,'_') 
 
-    tmp = params[:partner][:image].tempfile
-    file = File.join("app/assets/images/partner_pics", imageName)
-    FileUtils.cp tmp.path, file
-    FileUtils.rm tmp
-
-    params[:partner][:image] = "partner_pics/#{imageName}"
+    if !params[:partner][:image].nil?
+      imageName = params[:partner][:image].original_filename.gsub(/\s/,'_') 
+      tmp = params[:partner][:image].tempfile
+      file = File.join("app/assets/images/partner_pics", imageName)
+      FileUtils.cp tmp.path, file
+      FileUtils.rm tmp
+      params[:partner][:image] = "partner_pics/#{imageName}"
+    end
 
     respond_to do |format|
       if @partner.update_attributes(params[:partner])

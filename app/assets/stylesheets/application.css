@@ -275,8 +275,44 @@ a{
 	letter-spacing:0.9px;
 }
 
+	.content #pics{
+		margin:10px 0px 0px 0px;
+	}
+
+		.content #pics img{
+			margin:0px 28px 0px 10px;
+			width:168px;
+			height:114px;
+		}
+
+		.content #pics img:nth-child(3n){
+			margin:0px 0px 0px 10px;
+			width:168px;
+			height:114px;
+		}
+
+	.content .video{
+		margin:20px 0px 0px 0px;
+	}
+
+		.content .video div{
+			width:468px;
+			height:239px;
+			margin:0px auto 0px auto;
+		}
+
 .imageMedium{
 	margin:0px 15px 0px 0px;
+}
+
+.aboutImage{
+	width:251px;
+	height:255px;
+}
+
+.partnersImage{
+	width:609px;
+	height:240px;
 }
 
 .normalText{
