@@ -60,6 +60,9 @@ class VideosController < AdminManagementController
         if !params[:video][:video].nil?
           fork do
             exec("./createVideoPics.sh '#{videoName}' &")
+            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'")
+            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_2.jpg'")
+            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_3.jpg'")
           end
 
           @video.update_attribute("pic1", "worship_pics/#{videoName}_1.jpg")
