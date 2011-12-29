@@ -58,7 +58,7 @@ class VideosController < AdminManagementController
     respond_to do |format|
       if @video.save
         if !params[:video][:video].nil?
-          #logger.debug "./createVideoPics.sh '#{videoName}'"
+          logger.debug "./createVideoPics.sh '#{videoName}'"
           fork do
             exec("./createVideoPics.sh '#{videoName}'")
             #exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'")
