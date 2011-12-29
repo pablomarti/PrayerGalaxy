@@ -58,14 +58,15 @@ class VideosController < AdminManagementController
     respond_to do |format|
       if @video.save
         if !params[:video][:video].nil?
+          #logger.debug "./createVideoPics.sh '#{videoName}'"
           fork do
-            exec("./createVideoPics.sh '#{videoName}' &")
-            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'")
-            logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'"
-            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_2.jpg'")
-            logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_2.jpg'"
-            exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_3.jpg'")
-            logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_3.jpg'"
+            exec("./createVideoPics.sh '#{videoName}'")
+            #exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'")
+            #logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_1.jpg'"
+            #exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_2.jpg'")
+            #logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_2.jpg'"
+            #exec("ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_3.jpg'")
+            #logger.debug "ffmpeg -i 'public/worshipvideos/#{videoName}' -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y 'app/assets/images/worship_pics/#{videoName}_3.jpg'"
           end
 
           @video.update_attribute("pic1", "worship_pics/#{videoName}_1.jpg")
