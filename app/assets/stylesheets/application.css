@@ -423,6 +423,16 @@ a{
 }
 
 /********************************* Backend ************************************/
+
+.backendContent{
+	/*-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color:#76A6DC;	
+	opacity:0.4;
+	filter:alpha(opacity=40);*/
+}
+
 .backendContent h1{
 	font-size:22px;
 	color:#FDD967;
