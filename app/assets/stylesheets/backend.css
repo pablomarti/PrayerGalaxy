@@ -1,5 +1,9 @@
 /********************************* Backend ************************************/
 
+.content{
+	font-color:#333333;
+}
+
 .backendContent{
 	/*-moz-border-radius: 10px;
 	border-radius: 10px;
