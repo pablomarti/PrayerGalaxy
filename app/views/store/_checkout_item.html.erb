@@ -21,5 +21,12 @@
 			<div class="clear"> 
 			</div>
 		</div>
-	</p>
+	</p> 
+
+	<input type="hidden" name="item_name_<%= @currentItem %>" value="<%= checkout_item[:product].name %>"> 
+	<input type="hidden" name="amount_<%= @currentItem %>" value="<%= checkout_item[:product].price %>"> 
+	<!-- <input type="hidden" name="shipping_<%= @currentItem %>" value="<%= checkout_item[:product].price %>"> --> 
+	<input type="hidden" name="quantity_<%= @currentItem %>" value="<%= checkout_item[:quantity] %>"> 
 </div>
+
+<% @currentItem += 1 %>

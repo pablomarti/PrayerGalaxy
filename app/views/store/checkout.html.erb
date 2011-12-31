@@ -5,15 +5,25 @@
 
 <div class="initialContent">
 	<div class="content left">
-		<div id="checkout">
-			<%= render :partial => "checkout_item", :collection => @data %>
-		</div>
+		<form id="payPalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post">  
+			<input type="hidden" name="cmd" value="_cart"> 
+			<input type="hidden" name="upload" value="1"> 
+			<input type="hidden" name="business" value="vrtt08@yahoo.com">
+ 
+			<div id="checkout">
+				<%= render :partial => "checkout_item", :collection => @data %>
+			</div>
 
-		<div id="finalPrice" class="blackPrice right">
-			Total: <%= @final %> <br />
-			<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="right" style="margin-right:7px; margin-top:4px;"> <br /><br />
-			<img src="https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif" align="left" style="margin-right:7px; margin-top:6px;"><span style="font-size:11px; font-family: Arial, Verdana;">The safer, easier way to pay.</span>
-		</div>
+			<div id="finalPrice" class="blackPrice left">
+				Total: <%= @final %>
+			</div>
+
+			<div class="right payPalButton">
+				<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), "javascript:void(0)", :id => "payPalButton" %>
+			</div>
+
+			<div class="clear"></div>
+		</form>
 	</div>
 
 	<%= render "rightBar" %>

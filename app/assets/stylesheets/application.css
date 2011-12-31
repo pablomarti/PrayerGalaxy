@@ -189,7 +189,7 @@ a{
 			}
 
 			#menuItemsBackend a{
-				font-size:14px;
+				font-size:12px;
 				color:#FDFDFD;
 				text-decoration:none;
 				background:none;
@@ -266,7 +266,8 @@ a{
 
 .content{
 	margin:10px 0px 0px 0px;
-	color:#FFFFFF;
+	/*color:#FFFFFF;*/
+	color:#333333;
 	font-size:15px;	
 	width:610px;
 	height:auto;
@@ -419,4 +420,48 @@ a{
 	background-color: #62A9E1;
 	background: -moz-linear-gradient(top, #7FBCE9, #63A8E1);
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#7FBCE9), to(#63A8E1));
+}
+
+/********************************* Backend ************************************/
+.backendContent h1{
+	font-size:22px;
+	color:#FDD967;
+	display:block;
+	border-bottom:#FFFFFF 1px dotted;
+	width:100%;
+	height:28px;
+	margin:0px 0px 10px 0px;
+}
+
+.backendContent th{
+	font-size:16px;
+	padding-left:0px;
+	text-align:left;
+	padding:0px 20px 2px 0px;
+}
+
+.backendContent b{
+	font-size:16px;
+}
+
+.backendContent td{
+	padding:2px 20px 2px 0px;
+}
+
+.backendContent a{
+	background:none;
+	color:#FDD967;
+	font-weight:bold;
+}
+
+.backendContent a:visited{
+	background:none;
+	color:#FDD967;
+	font-weight:bold;
+}
+
+.backendContent a:hover{
+	background:none;
+	color:#FDD967;
+	font-weight:bold;
 }

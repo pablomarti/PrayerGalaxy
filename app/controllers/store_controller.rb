@@ -1,6 +1,18 @@
 class StoreController < ApplicationController
 
   #Will Paginate: https://github.com/mislav/will_paginate
+
+  #Set up payment solution
+  #https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_html_cart_upload
+
+  #Website Payments Standard Overview
+  #https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/howto_html_wp_standard_overview
+
+  #Shopping Cart
+  #https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_html_cart_upload
+
+  #HTML Variables for Website Payments Standard
+  #https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_html_Appx_websitestandard_htmlvariables
   
   def index
   	@sliderProducts = Product.order("id DESC").limit(5)
@@ -81,6 +93,7 @@ class StoreController < ApplicationController
   def updateCheckout
     session[:cart]["#{params[:id]}"] = params[:total]
     @data, @final = showCart
+    @currentItem = 1
   end
 
   def removeFromCheckout
@@ -90,6 +103,7 @@ class StoreController < ApplicationController
 
   def checkout
     @data, @final = showCart
+    @currentItem = 1
   end
 
   def showCart

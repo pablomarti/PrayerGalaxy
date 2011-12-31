@@ -22,6 +22,7 @@ class MainController < ApplicationController
   end
 
   def donate
+    @donation = Donation.find(1)
   end
 
   def newUser
@@ -30,6 +31,9 @@ class MainController < ApplicationController
 
   def prayerWatches
     @prayerWatches = PrayerWatch.all
+  end
+
+  def showVideo
   end
 
 end

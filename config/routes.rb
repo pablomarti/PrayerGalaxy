@@ -18,6 +18,7 @@ Prayergalaxy::Application.routes.draw do
   get "main/donate", :as => "mdonate"
   get "main/newUser", :as => "mnewUser"
   get "main/prayerWatches", :as => "mprayer_watches"
+  get "main/showVideo", :as => "mshow_video"
 
   #Clients
   resources :sessions
@@ -39,6 +40,7 @@ Prayergalaxy::Application.routes.draw do
   resources :visions
   resources :contact_pages
   resources :prayer_watches
+  resources :donations
 
 
   #Backend - Store

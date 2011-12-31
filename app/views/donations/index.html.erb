@@ -1,0 +1,15 @@
+<h1>Donations</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @donations.each do |donation| %>
+  <tr>
+    <td><%= donation.description %></td>
+    <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
+  </tr>
+<% end %>
+</table>

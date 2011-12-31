@@ -22,4 +22,7 @@ $(document).ready ->
 		else
 			alert("First you have to enter the total");
 
+	$("#payPalButton").click ->
+		$("#payPalForm").submit()
+
 	loadTotalElementsOfCart()

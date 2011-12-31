@@ -1,10 +1,9 @@
-<h1>Listing videos</h1>
+<h1>Videos</h1>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Video</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -13,7 +12,6 @@
   <tr>
     <td><%= video.title %></td>
     <td><%= video.video %></td>
-    <td><%= link_to 'Show', video %></td>
     <td><%= link_to 'Remove', video, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

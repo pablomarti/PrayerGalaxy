@@ -2,3 +2,24 @@
 	<span>Donate</span><br />
 	<%= image_tag "line.png" %>
 </div>
+
+<div class="initialContent">
+	<div class="content left">
+		<div>
+			<%= @donation.description %>
+		</div>
+
+		<div class="right donateBox">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="N7YUMDGEM3STE">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>
