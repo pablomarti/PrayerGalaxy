@@ -294,6 +294,9 @@ a{
 
 	.content .video{
 		margin:20px 0px 0px 0px;
+		width:585px;
+		height:350px;
+		background:red;
 	}
 
 		.content .video div{
