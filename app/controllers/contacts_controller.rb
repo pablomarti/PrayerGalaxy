@@ -1,5 +1,7 @@
 class ContactsController < AdminManagementController
 
+  before_filter :checkUser, :except => ["create"]
+
   # GET /contacts
   # GET /contacts.json
   def index

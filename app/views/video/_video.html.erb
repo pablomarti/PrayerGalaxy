@@ -1,6 +1,6 @@
 <div id="showVideo" class="left">
 	<div class="video-js-box">
-		<video class="video-js" width="468" height="239" controls preload poster="/assets/videoSection/videoPreview.jpg">
+		<video class="video-js" width="468" height="239" controls preload>
 	    	<source src="<%= @video.video %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 	      	<!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
 	      	<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
@@ -8,10 +8,7 @@
 			<object id="flash_fallback_1" class="vjs-flash-fallback" width="468" height="239" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
 	        	<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
 	        	<param name="allowfullscreen" value="true" />
-	        	<param name="flashvars" value='config={"playlist":["/assets/videoSection/videoPreview.jpg", {"url": "http://173.201.189.144<%= @video.video %>","autoPlay":false,"autoBuffering":true}]}' />
-	        	
-	        	<!-- Image Fallback. Typically the same as the poster image. -->
-	        	<%= image_tag "videoSection/videoPreview.jpg", :width => "468", :height => "239", :alt => "Galaxy Prayer Video", :title => "No video playback capabilities." %>
+	        	<param name="flashvars" value='config={"playlist":[{"url": "http://173.201.189.144<%= @video.video %>","autoPlay":false,"autoBuffering":true}]}' />
   			</object>
 		</video>
 	</div>
@@ -25,3 +22,7 @@
 
 <div class="clear">
 </div>
+
+<script type="text/javascript" charset="utf-8">
+    VideoJS.setupAllWhenReady();
+</script>
