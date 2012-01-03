@@ -20,19 +20,21 @@
 		</div>
 
 		<div class="video">
-			<div class="video-js-box">
-				<video class="video-js" width="585" height="299" controls preload>
-			    	<source src="<%= @data.video %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-			      	<!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
-			      	<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
-					
-					<object id="flash_fallback_1" class="vjs-flash-fallback" width="585" height="299" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-			        	<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
-			        	<param name="allowfullscreen" value="true" />
-			        	<param name="flashvars" value='config={"playlist":[{"url": "<%= @data.video %>","autoPlay":false,"autoBuffering":true}]}' />			        	
-		  			</object>
-				</video>
-			</div>
+			<% if @data.video != "" %>
+				<div class="video-js-box">
+					<video class="video-js" width="585" height="299" controls preload>
+				    	<source src="<%= @data.video %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+				      	<!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
+				      	<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
+						
+						<object id="flash_fallback_1" class="vjs-flash-fallback" width="585" height="299" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+				        	<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+				        	<param name="allowfullscreen" value="true" />
+				        	<param name="flashvars" value='config={"playlist":[{"url": "<%= @data.video %>","autoPlay":false,"autoBuffering":true}]}' />			        	
+			  			</object>
+					</video>
+				</div>
+			<% end %>
 		</div>
 	</div>
 
