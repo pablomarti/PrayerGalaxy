@@ -293,10 +293,10 @@ a{
 		}
 
 	.content .video{
-		margin:20px 0px 0px 0px;
+		margin:20px auto 0px auto;
 		width:585px;
 		height:350px;
-		background:red;
+		background:#000000;
 	}
 
 		.content .video div{
