@@ -19,7 +19,7 @@ sub connectDataBase{
 	my $self = shift;
 	disconnectDataBase($self);
 	$self->{_connected} = 1;
-	$self->{_db} = DBI->connect("DBI:mysql:prayergalaxy", "root", "welcome") or $self->{_connected} = 0;
+	$self->{_db} = DBI->connect("DBI:mysql:prayergalaxy", "root", "") or $self->{_connected} = 0;
 	if($self->{_connected}){
 		$self->{_db}->do("USE prayergalaxy;") or die "Error in DataBase Manager: " . $self->{_db}->errstr . "\n";
 	}
