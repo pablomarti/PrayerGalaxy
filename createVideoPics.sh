@@ -1,6 +1,9 @@
 #!/bin/bash
-chmod 0777 "public/worshipvideos/$1"
-ffmpeg -i "public/worshipvideos/$1" -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${1}_1.jpg"
-ffmpeg -i "public/worshipvideos/$1" -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${1}_2.jpg"
-ffmpeg -i "public/worshipvideos/$1" -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${1}_3.jpg"
+
+video=$( echo "$1" | awk -F/ '{print $3}' )
+
+chmod 0777 "public/worshipvideos/$video"
+ffmpeg -i "public/worshipvideos/$video" -an -ss 00:00:20 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${video}_1.jpg"
+ffmpeg -i "public/worshipvideos/$video" -an -ss 00:00:40 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${video}_2.jpg"
+ffmpeg -i "public/worshipvideos/$video" -an -ss 00:01:00 -r 1 -vframes 1 -f mjpeg -y "app/assets/images/worship_pics/${video}_3.jpg"
 echo "End of making thumbs"

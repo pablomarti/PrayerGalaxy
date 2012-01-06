@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111231041550) do
+ActiveRecord::Schema.define(:version => 20120106022426) do
 
   create_table "abouts", :force => true do |t|
     t.text     "description"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20111231041550) do
     t.string   "pic1"
     t.string   "pic2"
     t.string   "pic3"
+    t.boolean  "status",     :default => false
   end
 
   create_table "visions", :force => true do |t|

@@ -88,18 +88,18 @@ a{
 
 		#header{
 			width:1020px;
-			height:199px;
+			height:240px;/*199 -> 345*/
 			margin:0px auto 0px auto;
 			padding:0px;
 			background-image:url('topBackground.png');
 			background-repeat:no-repeat;
-			background-position:center;
+			background-position:center top;
 			position:relative;
 		}
 			
 			#top{
 				width:1020px;
-				height:150px;
+				height:180px;/*150*/
 				position:relative;	
 			}
 				
@@ -114,10 +114,15 @@ a{
 					}
 
 				#slogan{
-					top:30px;
-					left:350px;	
+					top:0px;
+					left:310px;	
 					position:absolute;
 				}
+					
+					#headerFlash{
+						position:absolute;
+						top:-20px;
+					}
 
 				#userStatus{
 					top:20px;
