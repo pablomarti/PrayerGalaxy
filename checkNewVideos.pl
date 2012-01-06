@@ -7,8 +7,8 @@ use perlBin::DB;
 main(@ARGV);
 
 sub main{
-	chdir '/home/pablo/RailsApps/3.1.0/prayergalaxy/' or die "Can't chdir to dir: $!";
-	#chdir '/home/vrmedia/PrayerGalaxy/' or die "Can't chdir to dir: $!";
+	#chdir '/home/pablo/RailsApps/3.1.0/prayergalaxy/' or die "Can't chdir to dir: $!";
+	chdir '/home/vrmedia/PrayerGalaxy/' or die "Can't chdir to dir: $!";
 	umask 0;
 	#open STDIN, '/dev/null'   or die "Can't read /dev/null: $!";
 	#open STDOUT, '>/dev/null' or die "Can't write to /dev/null: $!";
