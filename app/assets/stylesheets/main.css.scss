@@ -98,3 +98,28 @@ $blue3: #63A8E1;
 .donateBox{
 	margin:10px 0px 0px 0px;
 }
+
+#header{
+	width:1020px;
+	height:240px;/*199 -> 345*/
+	margin:0px auto 0px auto;
+	padding:0px;
+	background-image:url('topBackground.png');
+	background-repeat:no-repeat;
+	background-position:center top;
+	position:relative;
+
+	#top{
+		width:1020px;
+		height:180px;/*150*/
+		position:relative;	
+	}
+
+	#menu{
+		background-image:url('menu.png');
+		background-repeat:no-repeat;
+		width:998px;
+		height:165px;
+		margin:0px auto 0px auto;
+	}
+}
