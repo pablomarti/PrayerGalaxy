@@ -92,7 +92,7 @@ class VisionsController < AdminManagementController
       file = File.join("public/visionvideos", videoName)
       FileUtils.cp tmp.path, file
       FileUtils.rm tmp
-      params[:vision][:video] = "public/visionvideos/#{videoName}"
+      params[:vision][:video] = "/visionvideos/#{videoName}"
     end
 
     respond_to do |format|

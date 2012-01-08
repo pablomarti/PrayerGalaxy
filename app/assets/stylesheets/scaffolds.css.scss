@@ -15,23 +15,20 @@ pre {
   padding: 10px;
   font-size: 11px; }
 
-a {
+/*a {
   color: #000;
   &:visited {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
+    background-color: #000; } }*/
 
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }
 
 #notice {
-  font-weight:bold;
-  color: #333333; 
-  padding:0px 0px 10px 0px;
-}
+  color: green; }
 
 .field_with_errors {
   padding: 2px;

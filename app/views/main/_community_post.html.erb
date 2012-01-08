@@ -1,0 +1,25 @@
+<div class="communityPost">
+	<div class="left communityImage">
+		<%= image_tag community_post.image %>
+	</div>
+
+	<div class="right communityPostContent">
+		<div class="communityTitle">
+			<%= community_post.title %>
+		</div>
+
+		<div class="communityDescription">
+			<%= truncate(community_post.description, :length => 250) %>
+		</div>
+
+		<div class="right communityReadMore">
+			<%= link_to "Read (+)", communitypost_path(community_post.id) %>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div class="clear"></div>
+
+	<%= image_tag "line.png" %>
+</div>

@@ -9,10 +9,12 @@ class ApplicationController < ActionController::Base
         session[:cart] = {}
       end
 
-  		@currentUser = nil
-  		if !session[:userId].nil?
-  			@currentUser = User.find(session[:userId])
-  		end
+  		#@currentUser = nil
+  		#if !session[:userId].nil?
+  		#	@currentUser = User.find(session[:userId])
+  		#end
+      
+      @currentUser ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   	end
 
 end

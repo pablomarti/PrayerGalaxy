@@ -1,0 +1,23 @@
+<h1>Community</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @community_posts.each do |community_post| %>
+  <tr>
+    <td><%= community_post.title %></td>
+    <td><%= community_post.description %></td>
+    <td><%= link_to 'Edit', edit_community_post_path(community_post) %></td>
+    <td><%= link_to 'Remove', community_post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Community post', new_community_post_path %>

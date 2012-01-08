@@ -1,0 +1,20 @@
+<div class="title">
+	<span>Community</span><br />
+	<%= image_tag "line.png" %>
+</div>
+
+<div class="initialContent">
+	<div class="content left">
+		<div class="communityContent">
+			<%= render :partial => "community_post", :collection => @posts %>
+		</div>
+
+		<div id="communityPagination">
+			<%= will_paginate @posts %>
+		</div>
+	</div>
+
+	<%= render "rightBar" %>
+
+	<div class="clear"></div>
+</div>

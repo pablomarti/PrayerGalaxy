@@ -11,7 +11,11 @@
 			$("#loginButton").click(function(){
 				$.modal("<%= escape_javascript(render 'loginBox') %>", {focus:false});		
 			});
-		});		
+
+			<% if !params[:notice].nil? %>
+				alert("<%= params[:notice] %>");
+			<% end %>
+		});		 
 	</script>
 
 	</head>

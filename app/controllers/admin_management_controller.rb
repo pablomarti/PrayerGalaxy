@@ -14,7 +14,11 @@ class AdminManagementController < ApplicationController
         end
   		else
   			if controller_name != "panel"
-				  redirect_to :controller => "panel", :action => "index"
+          if controller_name != "users"
+            redirect_to :controller => "panel", :action => "index"
+          elsif action_name != "create"
+            redirect_to :controller => "panel", :action => "index"
+          end				  
 			  elsif action_name != "index" && action_name != "login"
 				  redirect_to :controller => "panel", :action => "index"
 			  end

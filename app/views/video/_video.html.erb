@@ -15,9 +15,7 @@
 </div>
 
 <div id="videoPics" class="right">
-	<%= image_tag @video.pic1 %>
-	<%= image_tag @video.pic2 %>
-	<%= image_tag @video.pic3 %>
+	<%= render :partial => "videoSuggestion", :collection => @suggestions %>
 </div>
 
 <div class="clear">

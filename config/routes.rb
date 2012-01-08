@@ -19,6 +19,15 @@ Prayergalaxy::Application.routes.draw do
   get "main/newUser", :as => "mnewUser"
   get "main/prayerWatches", :as => "mprayer_watches"
   get "main/showVideo", :as => "mshow_video"
+  get "main/community", :as => "mcommunity"
+  get 'main/communityPost/:id' => 'main#communityPost', :as => 'communitypost'
+  match 'main/validateAccount/:sec/:hsh' => "main#validateAccount", :as => "validate_account"
+
+  #Recovery password
+  get "password_resets/new", :as => "new_password_reset"
+  match 'password_resets/create' => "password_resets#create", :as => "password_reset_create"
+  match 'password_resets/edit/:id' => "password_resets#edit", :as => "edit_password_reset"
+  match 'password_resets/update/:id' => "password_resets#update", :as => "password_reset_update"
 
   #Clients
   resources :sessions
@@ -41,7 +50,7 @@ Prayergalaxy::Application.routes.draw do
   resources :contact_pages
   resources :prayer_watches
   resources :donations
-
+  resources :community_posts
 
   #Backend - Store
   resources :categories

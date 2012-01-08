@@ -182,7 +182,7 @@ a{
 				text-decoration:none;
 				background:none;
 				font-weight:bold;
-				margin:0px 75px 0px 0px;
+				margin:0px 45px 0px 0px;
 			}
 
 			#menuItemsBackend{
@@ -301,14 +301,8 @@ a{
 		margin:20px auto 0px auto;
 		width:585px;
 		height:350px;
-		background:#000000;
+		/*background:#000000*/
 	}
-
-		.content .video div{
-			width:585px;
-			height:299px;
-			margin:0px auto 0px auto;
-		}
 
 .imageMedium{
 	margin:0px 15px 0px 0px;
@@ -366,7 +360,7 @@ a{
 
 #loginBox{
 	width:258px;
-	height:150px;
+	height:170px;
 	background-color:#FFFFFF;
 	overflow:hidden;
 }
@@ -376,6 +370,24 @@ a{
 		height:auto;
 		margin:10px auto 0px auto;
 	}
+		.rememberMe{
+			font-size:10px;
+			color:#333333;
+			font-weight:bold;
+			width:auto;
+			margin:10px 0px 0px 17px;
+		}
+
+		#lostPassword{
+			padding:3px 0px 0px 17px;
+		}
+
+		#lostPassword a{
+			color:#76A1C1;
+			font-size:11px;
+			font-weight:bold;
+			background:none;
+		}
 
 		#loginBoxContent input[type=text]{
 				display:block;
@@ -430,3 +442,55 @@ a{
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#7FBCE9), to(#63A8E1));
 }
 
+/*********************************** Community **********************************/
+
+.communityContent{
+	margin:10px auto 0px auto;
+}
+
+.communityTitle{
+	font-weight:bold;
+	color:#FDD967;
+	font-size:15px;
+}
+
+.communityPost{
+	width:100%;
+	height:200px;
+}
+
+.communityImage img{
+	width:210px;
+	height:146px;
+}
+
+.communityPostContent{
+	width:380px;
+	height:145px;
+	font-size:13px;
+}
+
+.communityReadMore a{
+	background:none;
+	font-weight:bold;
+	color: #ACC4D9;
+}
+
+#communityPagination{
+	width:auto;
+	height:30px;
+}
+
+#communityPagination{
+	width:100%;
+	height:40px;
+	text-align:right;
+	margin:10px auto 0px auto;
+	font-weight:bold;
+	color:#FDD967;
+}
+
+	#communityPagination a{
+		background:none;
+		color:#ABD4FF;
+	}

@@ -46,6 +46,7 @@ class UsersController < AdminManagementController
     @status = 0
 
     if @user.save
+        UserMailer.verify_user(@user).deliver
         @status = 1
         @message = "Your user information has been saved successfully. You will receive an email in order to activate your account"
     else
