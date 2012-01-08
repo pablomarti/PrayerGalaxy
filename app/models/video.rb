@@ -9,7 +9,7 @@ class Video < ActiveRecord::Base
 		wordsQuery = ""
 		orV = ""
 		words.map{ |word|
-			wordsQuery += orV + "title LIKE '%#{word}%'"
+			wordsQuery += orV + "title LIKE '%#{word.gsub('\'','')}%'"
 			orV = " OR "
 		}
 
