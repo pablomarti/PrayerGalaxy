@@ -5,7 +5,9 @@
 <div id="showVideo" class="left">
 	<div class="video-js-box">
 		<video class="video-js" width="468" height="239" controls preload>
-	    	<source src="<%= @video.video %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	    	<source src="<%= @video.video %>" type='video/mp4' />
+	    	<!-- <source src="<%= @video.video %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /> -->
+
 	      	<!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
 	      	<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
 			
