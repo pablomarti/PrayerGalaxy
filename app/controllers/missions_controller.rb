@@ -1,4 +1,4 @@
-class MissionsController < ApplicationController
+class MissionsController < AdminManagementController
   # GET /missions
   # GET /missions.json
   def index
