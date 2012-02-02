@@ -6,7 +6,7 @@
 <div class="initialContent">
 	<div class="content left">
 		<p>
-			<%= @data.description %>
+			<%= raw @data.description.gsub("\n", "<br /><br />") %>
 		</p>
 	</div>
 
