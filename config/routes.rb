@@ -1,5 +1,7 @@
 Prayergalaxy::Application.routes.draw do
 
+  resources :missions
+
   get "video/index", :as => "video_page"
   get 'video/loadVideo/:id' => 'video#loadVideo', :as => 'load_video'
 
@@ -14,6 +16,7 @@ Prayergalaxy::Application.routes.draw do
   get "main/about", :as => "mabout"
   get "main/partners", :as => "mpartners"
   get "main/vision", :as => "mvision"
+  get "main/mission", :as => "mmission"
   get "main/contact", :as => "mcontact"
   get "main/donate", :as => "mdonate"
   get "main/newUser", :as => "mnewUser"

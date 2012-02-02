@@ -12,6 +12,10 @@ class MainController < ApplicationController
     @data = Partner.find(1)
   end
 
+  def mission
+    @data = Mission.find(1)
+  end
+
   def vision
     @data = Vision.find(1)
   end
