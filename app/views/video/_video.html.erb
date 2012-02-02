@@ -11,7 +11,7 @@
 	      	<!--<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
 	      	<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
 			
-			<object id="flash_fallback_1" class="vjs-flash-fallback" width="468" height="239" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+			<object id="flash_fallback_1" class="vjs-flash-fallback" width="589" height="301" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
 	        	<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
 	        	<param name="allowfullscreen" value="true" />
 	        	<param name="flashvars" value='config={"playlist":[{"url": "http://173.201.189.144<%= @video.video %>","autoPlay":false,"autoBuffering":true}]}' />
@@ -20,9 +20,9 @@
 	</div>
 </div>
 
-<div id="videoPics" class="right">
+<!--<div id="videoPics" class="right">
 	<%= render :partial => "videoSuggestion", :collection => @suggestions %>
-</div>
+</div>-->
 
 <div class="clear">
 </div>
