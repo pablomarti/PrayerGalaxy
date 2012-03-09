@@ -3,11 +3,11 @@
 		<%= image_tag item.image %>
 	</div>
 
-	<div class="productItemContent">
-		<span class="productItemContentTitle"><%= truncate(item.name, :length => 18 %></span>
+	<div class="productItemContent" style="height:60px">
+		<span class="productItemContentTitle"><%= truncate(item.name, :length => 18) %></span>
 
 		<div class="productItemContentDescription">
-			<%= truncate(item.description, :length => 22) %>X
+			<%= truncate(item.description, :length => 25) %>
 		</div>
 
 		<div class="bigPrice">
@@ -15,7 +15,7 @@
 		</div>
 	</div>
 		
-	<div class="buyNowButton">
+	<div class="buyNowButton" style="padding-left:60px;">
 		<%= link_to image_tag("buyNowButton.png"), store_product_path(item.id), :style => "background:none;" %>
 	</div>
 </div>
