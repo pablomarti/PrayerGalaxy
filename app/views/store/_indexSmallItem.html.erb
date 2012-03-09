@@ -4,14 +4,14 @@
 	</div>
 
 	<div class="popularItemContent right">
-		<span class="popularItemTitle"><%= indexSmallItem.name %></span>
+		<span class="popularItemTitle"><%= truncate(indexSmallItem.name, :length => 18) %></span>
 
 		<div class="popularItemDescription">
 			<%= truncate(indexSmallItem.description, :length => 40) %>
 		</div>
 
 		<div class="popularItemPrice">
-			<%= indexSmallItem.price %>
+			<%= number_to_currency(indexSmallItem.price, :unit => "$") %>
 		</div>
 		
 		<div class="buyNowButton">

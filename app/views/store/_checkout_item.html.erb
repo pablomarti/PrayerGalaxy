@@ -7,7 +7,7 @@
 
 		<div class="contentCart">
 			<div class="bigPrice left bigPriceWidth">
-				Price: <%= checkout_item[:product].price %>
+				Price: <%= number_to_currency(checkout_item[:product].price, :unit => "$") %>
 			</div>
 
 			<div class="totalProducts left">
@@ -15,7 +15,7 @@
 			</div>
 		
 			<div class="bigPrice left">
-				Total: <%= checkout_item[:total] %>
+				<%= number_to_currency(checkout_item[:total], :unit => "$") %>
 			</div>
 
 			<div class="clear"> 

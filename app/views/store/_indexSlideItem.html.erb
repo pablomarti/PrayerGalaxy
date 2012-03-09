@@ -5,7 +5,7 @@
 
 	<div class="right slideContent">
 		<div class="slideItemName">
-			<%= indexSlideItem.name %>
+			<%= truncate(indexSlideItem.name, :length => 20) %>
 		</div>
 
 		<div>
@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="bigPrice">
-			<%= indexSlideItem.price %>
+			<%= number_to_currency(indexSlideItem.price, :unit => "$") %>
 		</div>
 
 		<div class="buyNowButton">
