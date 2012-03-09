@@ -42,7 +42,7 @@
 			</div>
 
 			<div class="bigPrice">
-				<%= @lastProduct.price %>
+				<%= number_to_currency(@lastProduct.price, :unit => "$") %>
 			</div>
 		</div>
 	</div>
