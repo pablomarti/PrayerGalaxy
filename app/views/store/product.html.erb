@@ -17,7 +17,7 @@
 		<div class="productPriceAndCart">
 			<div class="productPriceAndCartAux">
 				<div class="bigPrice left">
-					<%= @product.price %>
+					<%= number_to_currency(@product.price, :unit => "$") %>
 				</div>
 
 				<div id="addToCartElement" class="addToCart right">
