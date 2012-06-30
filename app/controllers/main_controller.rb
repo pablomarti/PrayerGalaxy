@@ -69,4 +69,7 @@ class MainController < ApplicationController
     @post = CommunityPost.find(params[:id])
   end
 
+  def pdfs_page
+  end
+
 end

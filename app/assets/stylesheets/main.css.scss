@@ -78,6 +78,11 @@ $blue3: #63A8E1;
 
 			a{
 				background:none;
+
+				img{
+					width:259px;
+					height:291px;
+				}
 			}
 		}
 
@@ -121,5 +126,14 @@ $blue3: #63A8E1;
 		width:998px;
 		height:165px;
 		margin:0px auto 0px auto;
+	}
+}
+
+#pdf_links{
+	line-height:1.5;
+
+	a{
+		color:#d82646;
+		font-weight:bold;
 	}
 }

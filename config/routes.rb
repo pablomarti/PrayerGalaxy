@@ -21,10 +21,11 @@ Prayergalaxy::Application.routes.draw do
   get "main/donate", :as => "mdonate"
   get "main/newUser", :as => "mnewUser"
   get "main/prayerWatches", :as => "mprayer_watches"
-  get "main/showVideo", :as => "mshow_video"
+  get "main/showVideo" => "main#showVideo", :as => "mshow_video"
   get "main/community", :as => "mcommunity"
   get 'main/communityPost/:id' => 'main#communityPost', :as => 'communitypost'
   match 'main/validateAccount/:sec/:hsh' => "main#validateAccount", :as => "validate_account"
+  match "jm_bible_college" => "main#pdfs_page", :as => "pdfs_page"
 
   #Recovery password
   get "password_resets/new", :as => "new_password_reset"
