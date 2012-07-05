@@ -496,17 +496,17 @@ a{
 }
 
 
-#liveCam8World{
+div#liveCam8World{
 	position:absolute;
 	left:395px;
 	top:100px;
 }
 
-#liveCam8World a{
+div#liveCam8World a{
 	background:none;
 }
 
-#liveCam8World a img{
+div#liveCam8World a img{
 	width:259px;
 	height:291px;
 }
