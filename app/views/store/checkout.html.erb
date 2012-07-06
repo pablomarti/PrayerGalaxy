@@ -8,14 +8,14 @@
 		<form id="payPalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post">  
 			<input type="hidden" name="cmd" value="_cart"> 
 			<input type="hidden" name="upload" value="1"> 
-			<input type="hidden" name="business" value="vrtt08@yahoo.com">
+			<input type="hidden" name="business" value="aliwigs@gmail.com">
  
 			<div id="checkout">
 				<%= render :partial => "checkout_item", :collection => @data %>
 			</div>
 
 			<div id="finalPrice" class="blackPrice left">
-			<%= number_to_currency(@final, :unit => "$") %>
+					<%= number_to_currency(@final, :unit => "$") %>
 			</div>
 
 			<div class="right payPalButton">
